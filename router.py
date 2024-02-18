@@ -19,5 +19,5 @@ async def add_task(
 
 @router.get("")
 async def get_tasks() -> list[Task]:
-    tasks = await TaskRepository.get_all()
-    return {"data": tasks}
+    tasks = await TaskRepository.find_all()
+    return tasks

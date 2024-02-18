@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from uuid import uuid4, UUID
 
 
@@ -8,6 +8,8 @@ class TaskAdd(BaseModel):
 
 class Task(TaskAdd):
     ID: UUID
+
+    model_config = ConfigDict(from_attributes=True)
 
 
 class TaskAddResponse(BaseModel):
